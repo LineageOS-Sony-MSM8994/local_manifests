@@ -1,6 +1,6 @@
-# LineageOS 23.2 for the Sony Xperia Z3+/Z4, Z5 and Z5 Premium
+# LineageOS 24.0 for the Sony Xperia Z3+/Z4, Z5 and Z5 Premium
 
-Local manifests to build LineageOS 23.2 (Android 16) for the Sony Xperia kitakami devices
+Local manifests to build LineageOS 24.0 (Android 17) for the Sony Xperia kitakami devices
 (Qualcomm MSM8994).
 
 ## Devices
@@ -24,11 +24,11 @@ vendor blobs, the device HALs and the platform repos that carry changes for thes
 ## Building
 
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
-git clone https://github.com/LineageOS-Sony-MSM8994/local_manifests -b lineage-23.2 .repo/local_manifests
+repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
+git clone https://github.com/LineageOS-Sony-MSM8994/local_manifests -b lineage-24.0 .repo/local_manifests
 repo sync -c
 source build/envsetup.sh
-lunch lineage_<codename>-bp4a-user
+lunch lineage_<codename>-cp2a-user
 mka bacon
 ```
 
