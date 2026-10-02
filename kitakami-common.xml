@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LineageOS 23.2 (Android 16) - Sony Xperia Z3+/Z4, Z5 and Z5 Premium (kitakami, MSM8994)
+  Shared by every kitakami device, add the device manifest next to it.
+  Maintainer: Joseefitness - org: https://github.com/LineageOS-Sony-MSM8994
+-->
+
+<manifest>
+
+  <!-- Release org: all modified repos, branch lineage-23.2 -->
+  <remote name="msm8994"
+          fetch="https://github.com/LineageOS-Sony-MSM8994/"
+          revision="lineage-23.2" />
+
+  <!-- Personal profile: device trees, kernel, vendor and display HAL -->
+  <remote name="joseefitness"
+          fetch="https://github.com/Joseefitness/"
+          revision="lineage-23.2" />
+
+  <!-- Upstream LineageOS: device deps that are not forked -->
+  <remote name="lineage"
+          fetch="https://github.com/LineageOS/"
+          revision="lineage-23.2" />
+
+  <!-- ============================================================= -->
+  <!--  Common tree / kernel / vendor / device HALs                  -->
+  <!-- ============================================================= -->
+  <project name="android_device_sony_kitakami-common"  path="device/sony/kitakami-common"       remote="joseefitness" />
+  <project name="proprietary_vendor_sony"              path="vendor/sony"                       remote="joseefitness" />
+  <project name="android_kernel_sony_msm8994"          path="kernel/sony/msm8994"               remote="joseefitness" />
+  <project name="android_hardware_qcom_display"        path="hardware/qcom-caf/msm8994/display" remote="joseefitness" />
+  <project name="android_hardware_lineage_livedisplay" path="hardware/lineage/livedisplay"      remote="msm8994" />
+
+  <!-- Upstream device deps (unmodified) -->
+  <project name="android_device_sony_common"        path="device/sony/common"         remote="lineage" revision="lineage-18.1" />
+  <project name="android_hardware_sony_timekeep"    path="hardware/sony/timekeep"     remote="lineage" />
+  <project name="android_hardware_sony_macaddrsetup" path="hardware/sony/macaddrsetup" remote="lineage" />
+
+  <!-- ============================================================= -->
+  <!--  Modified platform repos (LineageOS-based) - override w/ fork -->
+  <!-- ============================================================= -->
+  <remove-project name="LineageOS/android_build" />
+  <project name="android_build" path="build/make" remote="msm8994" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <remove-project name="LineageOS/android_build_soong" />
+  <project name="android_build_soong" path="build/soong" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_external_wpa_supplicant_8" />
+  <project name="android_external_wpa_supplicant_8" path="external/wpa_supplicant_8" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <project name="android_frameworks_av" path="frameworks/av" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <project name="android_frameworks_base" path="frameworks/base" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_frameworks_opt_telephony" />
+  <project name="android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_art" />
+  <project name="android_art" path="art" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_hardware_broadcom_libbt" />
+  <project name="android_hardware_broadcom_libbt" path="hardware/broadcom/libbt" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_hardware_interfaces" />
+  <project name="android_hardware_interfaces" path="hardware/interfaces" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
+  <project name="android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_hardware_qcom_wlan" />
+  <project name="android_hardware_qcom_wlan" path="hardware/qcom-caf/wlan" remote="msm8994" revision="lineage-23.2-caf" />
+
+  <remove-project name="LineageOS/android_hardware_qcom_audio" />
+  <project name="android_hardware_qcom_audio" path="hardware/qcom/audio" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_packages_apps_FMRadio" />
+  <project name="android_packages_apps_FMRadio" path="packages/apps/FMRadio" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_packages_modules_Connectivity" />
+  <project name="android_packages_modules_Connectivity" path="packages/modules/Connectivity" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_packages_modules_Wifi" />
+  <project name="android_packages_modules_Wifi" path="packages/modules/Wifi" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_packages_modules_adb" />
+  <project name="android_packages_modules_adb" path="packages/modules/adb" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_packages_providers_MediaProvider" />
+  <project name="android_packages_providers_MediaProvider" path="packages/providers/MediaProvider" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_system_core" />
+  <project name="android_system_core" path="system/core" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_system_netd" />
+  <project name="android_system_netd" path="system/netd" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_system_sepolicy" />
+  <project name="android_system_sepolicy" path="system/sepolicy" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_system_vold" />
+  <project name="android_system_vold" path="system/vold" remote="msm8994" />
+
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_power" />
+  <project name="android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="msm8994" />
+
+  <!-- ============================================================= -->
+  <!--  Modified platform repos (AOSP-based) - override w/ fork      -->
+  <!-- ============================================================= -->
+  <remove-project name="platform/external/nanopb-c" />
+  <project name="android_external_nanopb-c" path="external/nanopb-c" remote="msm8994" />
+
+  <remove-project name="platform/hardware/ril" />
+  <project name="android_hardware_ril" path="hardware/ril" remote="msm8994" />
+
+  <remove-project name="platform/packages/modules/DnsResolver" />
+  <project name="android_packages_modules_DnsResolver" path="packages/modules/DnsResolver" remote="msm8994" />
+
+</manifest>
