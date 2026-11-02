@@ -8,7 +8,7 @@ Local manifests to build LineageOS 24.0 (Android 17) for the Sony Xperia kitakam
 | Device | Codename | Models | File | Status |
 |---|---|---|---|---|
 | Xperia Z3+ / Z4 | ivy | E6533, E6553 | `ivy.xml` | Untested |
-| Xperia Z5 | sumire | E6603, E6633, E6653, E6683 | `sumire.xml` | Untested |
+| Xperia Z5 | sumire | E6603, E6633, E6653, E6683 | `sumire.xml` | Tested |
 | Xperia Z5 Premium | satsuki | E6833, E6853, E6883 | `satsuki.xml` | Tested |
 
 `kitakami-common.xml` is always needed as it carries the common device tree, the kernel, the
