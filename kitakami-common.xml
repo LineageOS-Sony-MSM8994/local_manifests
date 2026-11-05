@@ -112,6 +112,9 @@
   <remove-project name="LineageOS/android_system_vold" />
   <project name="android_system_vold" path="system/vold" remote="msm8994" />
 
+  <remove-project name="LineageOS/android_vendor_lineage" />
+  <project name="android_vendor_lineage" path="vendor/lineage" remote="msm8994" />
+
   <remove-project name="LineageOS/android_vendor_qcom_opensource_power" />
   <project name="android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="msm8994" />
 
